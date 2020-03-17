@@ -7,9 +7,15 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo && nyc ava"
   },
-  "keywords": [],
+  "keywords": [
+    "Next.js",
+    "Javascript",
+    "React",
+    "xo",
+    "ava"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +25,36 @@
   },
   "devDependencies": {
     "ava": "^3.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-xo": "^0.29.1",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "nyc": "^15.0.0",
     "xo": "^0.27.2"
+  },
+  "xo": {
+    "envs": [
+      "node"
+    ],
+    "extends": [
+      "xo-react"
+    ],
+    "rules": {
+      "import/no-unassigned-import": 0,
+      "react/react-in-jsx-scope": 0
+    },
+    "parser": "babel-eslint"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*",
+      "pages/**/*"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ]
   }
 }
