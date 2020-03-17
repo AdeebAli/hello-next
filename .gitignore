@@ -1,2 +1,7 @@
 # Node Dependencies
 node_modules/
+
+.next/
+build/
+
+.nyc_output
